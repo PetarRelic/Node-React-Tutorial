@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "web": "npm start index.js"
   },
   "author": "",
   "license": "ISC",
