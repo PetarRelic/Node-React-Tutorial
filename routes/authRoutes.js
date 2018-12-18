@@ -7,12 +7,18 @@ module.exports = app => {
     }));
 
     //route for response of auth
-    app.get('/auth/google/callback', passport.authenticate('google'));
+    app.get(
+        '/auth/google/callback', 
+        passport.authenticate('google'),
+        (req, res) => {
+            res.redirect('/surveys');
+        }
+    );
 
     //route to logout
     app.get('/api/logout', (req,res) => {
         req.logout();
-        res.send(req.user);
+        res.redirect('/');
     });
 
     //route for logged in user
